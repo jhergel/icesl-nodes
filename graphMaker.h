@@ -53,6 +53,9 @@ public:
        project.path = path;
        activeProject = true;
        project.createNodefolder();
+       std::string source(PATHTOSRC"/basic_nodes");
+       std::string dest(project.nodefolder());
+       project.copyDir(source,dest);
        project.copyEmitNode();
   }
   Project& getProject(){
